@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Register = () => {
     const {createUser} = useContext(AuthContext)
@@ -19,7 +20,7 @@ const Register = () => {
     createUser(email,password)
     .then(result=>{
         const user = result.user
-        // console.log(user)
+        console.log(user)
     })
     .catch(err=>console.log(err))
 
@@ -94,6 +95,7 @@ const Register = () => {
                   Login
                 </Link>
               </p>
+              <SocialLogin/>
             </div>
           </div>
         </div>

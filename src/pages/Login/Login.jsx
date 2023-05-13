@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import img from "../../assets/images/login/login.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const Login = () => {
   const {signIn} = useContext(AuthContext)
@@ -21,7 +22,11 @@ const Login = () => {
     .then(result=>{
       const user = result.user 
       console.log(user)
-      navigate(from,{replace:true})
+      
+
+      
+      
+     
     })
     .catch(err=>console.log(err))
 
@@ -80,6 +85,7 @@ const Login = () => {
                 Sign up
               </Link>
             </p>
+            <SocialLogin/>
           </div>
         </div>
       </div>
